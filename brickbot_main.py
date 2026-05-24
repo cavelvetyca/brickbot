@@ -1,5 +1,6 @@
 import os
 import time
+import random
 import asyncio
 import logging
 
@@ -106,7 +107,6 @@ async def on_ready():
     if not monitor_server.is_running():
         monitor_server.start()
 
-
 @bot.tree.command(name="status", description="Check if the server is online")
 async def status(interaction: discord.Interaction):
     status_data, _ = await get_status()
@@ -208,6 +208,19 @@ async def estimateduptime(interaction: discord.Interaction):
         f"(Based on when the bot first detected the server online.)"
     )
 
+@bot.tree.command(name="mommyasmr", description="Ask the cursed anime bot something")
+async def mommyasmr(interaction: discord.Interaction, question: str):
+    replies = [
+        "nyahhh~ go touch grass, but softly...",
+        "uwu the answer is hidden inside your router...",
+        "*anime whisper* shhh... your server is eepy...",
+        "nyaaa~ I asked the lag spirits and they said no >w<",
+        "*pats your Minecraft server* it’s trying its best...",
+        f"nyahhh~ `{question}` sounds very concerning uwu",
+        f"*whispers softly* `{question}` is being processed by the silly braincell..."
+    ]
+
+    await interaction.response.send_message(random.choice(replies))
 
 @bot.tree.command(name="commands", description="Show bot commands")
 async def commands_list(interaction: discord.Interaction):
