@@ -225,7 +225,7 @@ async def mommyasmr(interaction: discord.Interaction, question: str):
 @bot.tree.command(name="commands", description="Show bot commands")
 async def commands_list(interaction: discord.Interaction):
     await interaction.response.send_message(
-        "/status, /playercount, /ping, /version, /motd, /players, /ip, /uptime, /estimateduptime, /commands"
+        "/status, /playercount, /ping, /version, /motd, /players, /ip, /uptime, /estimateduptime, /mommyasmr, /commands"
     )
 
 
