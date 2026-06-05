@@ -11,7 +11,7 @@ from mcstatus import JavaServer
 logging.basicConfig(level=logging.INFO)
 
 TOKEN = os.getenv("TOKEN")
-SERVER_HOST = os.getenv("SERVER_HOST", "lilliansmp.secure.pebble.host")
+SERVER_HOST = os.getenv("SERVER_HOST", "hotc.secure.pebble.host")
 SERVER_PORT = int(os.getenv("SERVER_PORT", "25565"))
 GUILD_ID_RAW = os.getenv("GUILD_ID")
 
