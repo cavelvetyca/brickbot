@@ -127,7 +127,14 @@ async def playercount(interaction: discord.Interaction):
         f"Players: {status_data.players.online}/{status_data.players.max}"
     )
 
+import random
 
+@bot.tree.command(name="chudmeter", description="Measure chud levels")
+async def chudmeter(interaction: discord.Interaction):
+    await interaction.response.send_message(
+        f"Zecrokunn is currently {random.randint(87,100)}% chudmaxxed."
+    )
+    
 @bot.tree.command(name="ping", description="Show server ping")
 async def ping(interaction: discord.Interaction):
     status_data, _ = await get_status()
