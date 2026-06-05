@@ -223,28 +223,49 @@ async def estimateduptime(interaction: discord.Interaction):
 @bot.tree.command(name="mommyasmr", description="Ask the cursed anime bot something")
 async def mommyasmr(interaction: discord.Interaction, question: str):
 
-    images = {
-        "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png": "nyahhh~",
-        "images/breaking news.png": "🚨 BREAKING NEWS 🚨"
-    }
-
-    image = random.choice(list(images.keys()))
-
-    replies = [
-        "nyahhh~ go touch grass, but softly...",
-        "uwu the answer is hidden inside your router...",
-        "*anime whisper* shhh... your server is eepy...",
-        "nyaaa~ I asked the lag spirits and they said no >w<",
-        "*pats your Minecraft server* it’s trying its best...",
-        f"nyahhh~ `{question}` sounds very concerning uwu",
-        f"*whispers softly* `{question}` is being processed by the silly braincell..."
+    responses = [
+        {
+            "text": "nyahhh~ go touch grass, but softly..."
+        },
+        {
+            "text": "uwu the answer is hidden inside your router..."
+        },
+        {
+            "text": "*anime whisper* shhh... your server is eepy..."
+        },
+        {
+            "text": "nyaaa~ I asked the lag spirits and they said no >w<"
+        },
+        {
+            "text": "*pats your Minecraft server* it’s trying its best..."
+        },
+        {
+            "text": f"nyahhh~ `{question}` sounds very concerning uwu"
+        },
+        {
+            "text": f"*whispers softly* `{question}` is being processed by the silly braincell..."
+        },
+        {
+            "text": "🚨 BREAKING NEWS 🚨 Fork found in kitchen.",
+            "image": "images/breaking news.png"
+        },
+        {
+            "text": "nyahhh~",
+            "image": "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png"
+        }
     ]
 
-    await interaction.response.send_message(
-        random.choice(replies),
-        file=discord.File(image)
-    )
-    await interaction.response.send_message(random.choice(replies))
+    response = random.choice(responses)
+
+    if "image" in response:
+        await interaction.response.send_message(
+            response["text"],
+            file=discord.File(response["image"])
+        )
+    else:
+        await interaction.response.send_message(
+            response["text"]
+        )
 
 @bot.tree.command(name="commands", description="Show bot commands")
 async def commands_list(interaction: discord.Interaction):
