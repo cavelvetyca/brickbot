@@ -224,66 +224,69 @@ async def estimateduptime(interaction: discord.Interaction):
 async def mommyasmr(interaction: discord.Interaction, question: str):
 
     responses = [
-    {
-        "text": "nyahhh~ go touch grass, but softly...",
-        "images": [
-            "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png",
-            "images/elsa.png",
-            "images/kate (1).png",
-            "images/Usag.png"
-        ]
-    },
-    {
-        "text": "uwu the answer is hidden inside your router..."
-    },
-    {
-        "text": "*anime whisper* shhh... your server is eepy..."
-    },
-    {
-        "text": "nyaaa~ I asked the lag spirits and they said no >w<"
-    },
-    {
-        "text": "*pats your Minecraft server* it’s trying its best..."
-    },
-    {
-        "text": f"nyahhh~ `{question}` sounds very concerning uwu"
-    },
-    {
-        "text": f"*whispers softly* `{question}` is being processed by the silly braincell..."
-    },
-    {
-        "text": "🚨 BREAKING NEWS 🚨 Fork found in kitchen.",
-        "image": "images/breaking news.png"
-    },
-    {
-        "text": "nyahhh~",
-        "images": [
-            "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png",
-            "images/elsa.png",
-            "images/kate (1).png",
-            "images/Usag.png"
-        ]
-    }
-]
+        {
+            "text": "nyahhh~ go touch grass, but softly...",
+            "images": [
+                "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png",
+                "images/elsa.png",
+                "images/kate (1).png",
+                "images/Usag.png"
+            ]
+        },
+        {
+            "text": "uwu the answer is hidden inside your router..."
+        },
+        {
+            "text": "*anime whisper* shhh... your server is eepy..."
+        },
+        {
+            "text": "nyaaa~ I asked the lag spirits and they said no >w<"
+        },
+        {
+            "text": "*pats your Minecraft server* it’s trying its best..."
+        },
+        {
+            "text": f"nyahhh~ `{question}` sounds very concerning uwu"
+        },
+        {
+            "text": f"*whispers softly* `{question}` is being processed by the silly braincell..."
+        },
+        {
+            "text": "🚨 BREAKING NEWS 🚨 Fork found in kitchen.",
+            "image": "images/breaking news.png"
+        },
+        {
+            "text": "nyahhh~",
+            "images": [
+                "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png",
+                "images/elsa.png",
+                "images/kate (1).png",
+                "images/Usag.png"
+            ]
+        }
+    ]
 
     response = random.choice(responses)
 
-if "images" in response:
-    image = random.choice(response["images"])
-    logging.info("Trying to send image: %s", image)
+    if "images" in response:
+        image = random.choice(response["images"])
+        logging.info("Trying to send image: %s", image)
 
-    await interaction.response.send_message(
-        response["text"],
-        file=discord.File(image)
-    )
+        await interaction.response.send_message(
+            response["text"],
+            file=discord.File(image)
+        )
 
-elif "image" in response:
-    logging.info("Trying to send image: %s", response["image"])
+    elif "image" in response:
+        logging.info("Trying to send image: %s", response["image"])
 
-    await interaction.response.send_message(
-        response["text"],
-        file=discord.File(response["image"])
-    )
+        await interaction.response.send_message(
+            response["text"],
+            file=discord.File(response["image"])
+        )
+
+    else:
+        await interaction.response.send_message(response["text"])
 
 @bot.tree.command(name="commands", description="Show bot commands")
 async def commands_list(interaction: discord.Interaction):
