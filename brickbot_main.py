@@ -222,6 +222,14 @@ async def estimateduptime(interaction: discord.Interaction):
 
 @bot.tree.command(name="mommyasmr", description="Ask the cursed anime bot something")
 async def mommyasmr(interaction: discord.Interaction, question: str):
+
+    images = {
+        "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png": "nyahhh~",
+        "images/breaking news.png": "🚨 BREAKING NEWS 🚨"
+    }
+
+    image = random.choice(list(images.keys()))
+
     replies = [
         "nyahhh~ go touch grass, but softly...",
         "uwu the answer is hidden inside your router...",
@@ -232,6 +240,10 @@ async def mommyasmr(interaction: discord.Interaction, question: str):
         f"*whispers softly* `{question}` is being processed by the silly braincell..."
     ]
 
+    await interaction.response.send_message(
+        random.choice(replies),
+        file=discord.File(image)
+    )
     await interaction.response.send_message(random.choice(replies))
 
 @bot.tree.command(name="commands", description="Show bot commands")
