@@ -268,7 +268,7 @@ async def mommyasmr(interaction: discord.Interaction, question: str):
 
     response = random.choice(responses)
 
-    if "image" in response:
+    if "images" in response:
         await interaction.response.send_message(
             response["text"],
             file=discord.File(response["image"])
