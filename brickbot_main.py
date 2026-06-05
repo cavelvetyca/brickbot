@@ -223,48 +223,47 @@ async def estimateduptime(interaction: discord.Interaction):
 @bot.tree.command(name="mommyasmr", description="Ask the cursed anime bot something")
 async def mommyasmr(interaction: discord.Interaction, question: str):
 
-    responses = [
-        {
-            "text": "nyahhh~ go touch grass, but softly...",
-            "images": [
-                "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png",
-                "images/elsa.png",
-                "images/kate (1).png",
-                "images/Usag.png"
-            ]
-        },
-        {
-            "text": "uwu the answer is hidden inside your router..."
-        },
-        {
-            "text": "*anime whisper* shhh... your server is eepy..."
-        },
-        {
-            "text": "nyaaa~ I asked the lag spirits and they said no >w<"
-        },
-        {
-            "text": "*pats your Minecraft server* it’s trying its best..."
-        },
-        {
-            "text": f"nyahhh~ `{question}` sounds very concerning uwu"
-        },
-        {
-            "text": f"*whispers softly* `{question}` is being processed by the silly braincell..."
-        },
-        {
-            "text": "🚨 BREAKING NEWS 🚨 Fork found in kitchen.",
-            "image": "images/breaking news.png"
-        },
-        {
-            "text": "nyahhh~",
-            "images": [
-                "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png",
-                "images/elsa.png",
-                "images/kate (1).png",
-                "images/Usag.png"
-            ]
-        }
-    ]
+anime_images = [
+    "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png",
+    "images/elsa.png",
+    "images/kate (1).png",
+    "images/Usag.png"
+]
+
+responses = [
+    {
+        "text": "nyahhh~ go touch grass, but softly...",
+        "images": anime_images
+    },
+    {
+        "text": "uwu the answer is hidden inside your router...",
+        "images": anime_images
+    },
+    {
+        "text": "*anime whisper* shhh... your server is eepy...",
+        "images": anime_images
+    },
+    {
+        "text": "nyaaa~ I asked the lag spirits and they said no >w<",
+        "images": anime_images
+    },
+    {
+        "text": "*pats your Minecraft server* it’s trying its best...",
+        "images": anime_images
+    },
+    {
+        "text": f"nyahhh~ `{question}` sounds very concerning uwu",
+        "images": anime_images
+    },
+    {
+        "text": f"*whispers softly* `{question}` is being processed by the silly braincell...",
+        "images": anime_images
+    },
+    {
+        "text": "🚨 BREAKING NEWS 🚨 Fork found in kitchen.",
+        "image": "images/breaking news.png"
+    }
+]
 
     response = random.choice(responses)
 
