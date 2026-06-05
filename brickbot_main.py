@@ -225,8 +225,15 @@ async def mommyasmr(interaction: discord.Interaction, question: str):
 
     responses = [
         {
-            "text": "nyahhh~ go touch grass, but softly..."
-            "image": "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png,elsa.png,kate (1).png,Usag.png"
+{
+    "text": "nyahhh~ go touch grass, but softly...",
+    "images": [
+        "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png",
+        "images/elsa.png",
+        "images/kate (1).png",
+        "images/Usag.png"
+    ]
+},
         },
         {
             "text": "uwu the answer is hidden inside your router..."
@@ -251,8 +258,14 @@ async def mommyasmr(interaction: discord.Interaction, question: str):
             "image": "images/breaking news.png"
         },
         {
-            "text": "nyahhh~",
-            "image": "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png,elsa.png,kate (1).png,Usag.png"
+        "text": "nyahhh~",
+        "images": [
+            "images/Emily_940_d851682158ae7147650fd1272e3f36ef.png",
+            "images/elsa.png",
+            "images/kate (1).png",
+            "images/Usag.png"
+    ]
+},
         }
     ]
 
