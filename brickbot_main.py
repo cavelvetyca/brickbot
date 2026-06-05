@@ -188,6 +188,11 @@ async def uptime(interaction: discord.Interaction):
     seconds = int(time.time() - BOT_START_TIME)
     await interaction.response.send_message(f"Bot uptime: {format_duration(seconds)}")
 
+@bot.tree.command(name="chudmaxxers", description="List the local chudmaxxers")
+async def chudmaxxers(interaction: discord.Interaction):
+    await interaction.response.send_message(
+        "heres a list of the local chudmaxxers: zecrokunn, zecrokunn, zecrokunn, zecrokunn, zecrokunn"
+    )
 
 @bot.tree.command(name="estimateduptime", description="Estimate how long the server has stayed online")
 async def estimateduptime(interaction: discord.Interaction):
