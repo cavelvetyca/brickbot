@@ -268,15 +268,22 @@ async def mommyasmr(interaction: discord.Interaction, question: str):
 
     response = random.choice(responses)
 
-    if "images" in response:
-        await interaction.response.send_message(
-            response["text"],
-            file=discord.File(response["image"])
-        )
-    else:
-        await interaction.response.send_message(
-            response["text"]
-        )
+if "images" in response:
+    image = random.choice(response["images"])
+    logging.info("Trying to send image: %s", image)
+
+    await interaction.response.send_message(
+        response["text"],
+        file=discord.File(image)
+    )
+
+elif "image" in response:
+    logging.info("Trying to send image: %s", response["image"])
+
+    await interaction.response.send_message(
+        response["text"],
+        file=discord.File(response["image"])
+    )
 
 @bot.tree.command(name="commands", description="Show bot commands")
 async def commands_list(interaction: discord.Interaction):
