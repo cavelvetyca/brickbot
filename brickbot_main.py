@@ -3,8 +3,10 @@ import time
 import random
 import asyncio
 import logging
-
 import discord
+from discord.ext import commands
+from flask import Flask
+from threading import Thread
 from discord.ext import commands, tasks
 from mcstatus import JavaServer
 
@@ -297,5 +299,16 @@ async def commands_list(interaction: discord.Interaction):
 async def on_error(event, *args, **kwargs):
     logging.exception("Unhandled error in event: %s", event)
 
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "GDBot is running."
+
+def run_web():
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
+Thread(target=run_web).start()
 
 bot.run(TOKEN, log_handler=None)
