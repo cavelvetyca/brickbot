@@ -1,2 +1,3 @@
 discord.py==2.5.2
 mcstatus==12.0.5
+flask
